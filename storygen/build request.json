@@ -1,0 +1,125 @@
+{
+  "kind": "build_request",
+  "title": "Scriptoria – Full AI Film Pre-Production Platform (Complete Build)",
+  "projectName": "Scriptoria",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "text": "Ensure the backend Motoko actor exposes all three AI generation endpoints (generateScreenplay, generateCharacterProfiles, generateProductionPlan) that call the OpenAI Chat Completions API via HTTP outcalls, using structured prompts for properly formatted screenplay output, character profiles (name, role, personality, backstory, motivations), and production plan (shooting schedule, crew requirements, location suggestions, budget tier). All three functions must be stable and return results as text.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "turns a simple idea into a complete screenplay, character profiles, and production plan in minutes",
+          "all powered by OpenAI for real AI creativity"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Calling generateScreenplay with an idea string returns a properly formatted screenplay text with scene headings, action lines, and dialogue.",
+        "Calling generateCharacterProfiles with an idea string returns structured character data with name, role, personality, backstory, and motivations.",
+        "Calling generateProductionPlan with an idea string returns a plan including shooting schedule, crew requirements, location suggestions, and budget tier.",
+        "All three backend calls complete without runtime errors and return non-empty strings."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Verify and polish the frontend dashboard so the hero section, idea input area, generate button, loading skeleton placeholders, and all three content panels (Screenplay, Character Profiles, Production Plan) render correctly end-to-end. The generate button must trigger all three AI generation calls in parallel and display animated skeleton placeholders while awaiting results.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "turns a simple idea into a complete screenplay, character profiles, and production plan in minutes",
+          "modern, animated, mobile-responsive dashboard"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Typing an idea and clicking Generate triggers all three backend calls in parallel.",
+        "Animated skeleton placeholders are visible in all three panels during loading.",
+        "Results populate each respective panel upon completion.",
+        "The Generate button is disabled while generation is in progress."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Ensure the 'Save as PDF' button in the Screenplay panel correctly exports the full screenplay content as a formatted, downloadable A4 PDF file with title, divider, metadata, and monospaced screenplay content using jsPDF.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "save screenplays as PDF"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking 'Save as PDF' downloads a .pdf file to the user's device.",
+        "The PDF includes the screenplay title, a divider, metadata, and the full screenplay body in a readable monospaced font.",
+        "The PDF is A4 size and properly paginated."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Ensure the 'Download Production Plan' button in the Production Plan panel correctly exports the production plan content as a downloadable .txt file with a formatted header including the project idea and generation date.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "download production plans"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking the download button saves a .txt file to the user's device.",
+        "The file includes a header with the project idea and generation date.",
+        "The full production plan content is included in the file."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Polish the cinematic dark theme dashboard UI to ensure consistent application of the amber/gold and deep charcoal color palette, film-inspired typography, smooth CSS entrance animations on all panels, and a fully responsive layout that collapses gracefully on mobile screens. Add any missing visual refinements to the hero section, navigation, and content panels.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "modern, animated, mobile-responsive dashboard",
+          "Perfect for students, indie filmmakers, and storytellers"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The dark cinematic theme with amber/gold accents is applied consistently across all components.",
+        "Panels animate in smoothly on load and after content generation.",
+        "The layout is fully usable on mobile screens (320px+) with no horizontal overflow.",
+        "Film-inspired typography is applied to headings and labels throughout the app."
+      ]
+    }
+  ],
+  "constraints": [
+    "All Motoko logic must remain in a single backend/main.mo actor file.",
+    "Do not edit any files listed in frontend.immutablePaths.",
+    "OpenAI API calls must be made via HTTP outcalls from the Motoko backend, not from the frontend.",
+    "jsPDF must be used for PDF export via CDN loading on the client side.",
+    "Production plan download must produce a .txt file."
+  ],
+  "nonGoals": [
+    "User authentication or login flows (Internet Identity integration not required for core features).",
+    "Saving generated content to persistent backend storage.",
+    "Real-time collaboration or multi-user features.",
+    "Video or audio generation.",
+    "Any payment or subscription features."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Cinematic dark film reel hero background with dramatic amber and gold light streaks on deep charcoal, wide letterbox format (hero-bg.dim_1920x800.png)",
+      "Scriptoria film clapperboard logo mark with gold trim on dark background, square icon (scriptoria-logo.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

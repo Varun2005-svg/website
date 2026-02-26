@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Scriptoria is an AI-powered film pre-production tool that turns a simple idea into a complete screenplay, character profiles, and production plan. It features OpenAI-powered generation, PDF export for screenplays, downloadable production plans, and a modern animated mobile-responsive dashboard.",
+  "architectural_notes": [
+    "Powered by OpenAI API for all AI generation tasks (screenplay, characters, production plan)",
+    "Mobile-responsive, animated dashboard as the primary UI"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Cinematic dark film reel hero background with dramatic amber and gold light streaks on deep charcoal, wide letterbox format (hero-bg.dim_1920x800.png)\n- Scriptoria film clapperboard logo mark with gold trim on dark background, square icon (scriptoria-logo.dim_256x256.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-frontend-dashboard-with-a-text-input-for-the-user-s-film-idea-and-a-single-generate-button-that-triggers-all-three-ai-generation-functions-screenplay-character-profiles-production-plan-in-parallel-display-a-loading-state-with-animated-skeleton-placeholders-during-generation",
+      "title": "Build a frontend dashboard with a text input for the user's film idea and a single 'Generate' button that triggers all three AI generation functions (screenplay, character profiles, production plan) in parallel. Display a loading state with animated skeleton placeholders during generation.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-save-as-pdf-feature-for-the-generated-screenplay-in-the-frontend-when-the-user-clicks-save-as-pdf-the-screenplay-content-should-be-formatted-and-exported-as-a-downloadable-pdf-file-using-a-client-side-library-e-g-jspdf",
+      "title": "Implement a 'Save as PDF' feature for the generated screenplay in the frontend. When the user clicks 'Save as PDF', the screenplay content should be formatted and exported as a downloadable PDF file using a client-side library (e.g., jsPDF).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-download-production-plan-feature-in-the-frontend-when-the-user-clicks-the-download-button-the-production-plan-content-is-exported-as-a-downloadable-plain-text-or-markdown-txt-md-file",
+      "title": "Implement a 'Download Production Plan' feature in the frontend. When the user clicks the download button, the production plan content is exported as a downloadable plain-text or markdown (.txt/.md) file.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-and-implement-a-modern-animated-mobile-responsive-dashboard-ui-the-layout-should-use-a-cinematic-dark-theme-with-rich-amber-gold-and-deep-charcoal-tones-film-inspired-typography-smooth-css-entrance-animations-for-panels-and-a-fully-responsive-grid-that-collapses-gracefully-on-mobile-screens",
+      "title": "Design and implement a modern, animated, mobile-responsive dashboard UI. The layout should use a cinematic dark theme with rich amber/gold and deep charcoal tones, film-inspired typography, smooth CSS entrance animations for panels, and a fully responsive grid that collapses gracefully on mobile screens.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-organize-the-generated-content-into-three-clearly-labeled-tabbed-or-sectioned-panels-screenplay-character-profiles-and-production-plan-each-panel-should-render-its-content-in-a-readable-well-structured-format",
+      "title": "Organize the generated content into three clearly labeled tabbed or sectioned panels: 'Screenplay', 'Character Profiles', and 'Production Plan'. Each panel should render its content in a readable, well-structured format.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-and-polish-the-frontend-dashboard-so-the-hero-section-idea-input-area-generate-button-loading-skeleton-placeholders-and-all-three-content-panels-screenplay-character-profiles-production-plan-render-correctly-end-to-end-the-generate-button-must-trigger-all-three-ai-generation-calls-in-parallel-and-display-animated-skeleton-placeholders-while-awaiting-results",
+      "title": "Verify and polish the frontend dashboard so the hero section, idea input area, generate button, loading skeleton placeholders, and all three content panels (Screenplay, Character Profiles, Production Plan) render correctly end-to-end. The generate button must trigger all three AI generation calls in parallel and display animated skeleton placeholders while awaiting results.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-save-as-pdf-button-in-the-screenplay-panel-correctly-exports-the-full-screenplay-content-as-a-formatted-downloadable-a4-pdf-file-with-title-divider-metadata-and-monospaced-screenplay-content-using-jspdf",
+      "title": "Ensure the 'Save as PDF' button in the Screenplay panel correctly exports the full screenplay content as a formatted, downloadable A4 PDF file with title, divider, metadata, and monospaced screenplay content using jsPDF.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-download-production-plan-button-in-the-production-plan-panel-correctly-exports-the-production-plan-content-as-a-downloadable-txt-file-with-a-formatted-header-including-the-project-idea-and-generation-date",
+      "title": "Ensure the 'Download Production Plan' button in the Production Plan panel correctly exports the production plan content as a downloadable .txt file with a formatted header including the project idea and generation date.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-polish-the-cinematic-dark-theme-dashboard-ui-to-ensure-consistent-application-of-the-amber-gold-and-deep-charcoal-color-palette-film-inspired-typography-smooth-css-entrance-animations-on-all-panels-and-a-fully-responsive-layout-that-collapses-gracefully-on-mobile-screens-add-any-missing-visual-refinements-to-the-hero-section-navigation-and-content-panels",
+      "title": "Polish the cinematic dark theme dashboard UI to ensure consistent application of the amber/gold and deep charcoal color palette, film-inspired typography, smooth CSS entrance animations on all panels, and a fully responsive layout that collapses gracefully on mobile screens. Add any missing visual refinements to the hero section, navigation, and content panels.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AI-powered screenplay generation from a simple idea using OpenAI",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "AI-generated character profiles from the story idea",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "AI-generated production plan from the story idea",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Save/export screenplay as PDF",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Download production plan as a file",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Modern animated mobile-responsive dashboard UI",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Create a backend actor that exposes a function to generate a complete screenplay from a user-provided idea string. The function should call the OpenAI Chat Completions API with a structured prompt requesting a properly formatted screenplay (scene headings, action lines, dialogue) and return the result as text.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Create a backend function to generate character profiles from a user-provided idea string. It should call the OpenAI API requesting a list of main characters, each with name, role, personality traits, backstory, and motivations.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Create a backend function to generate a production plan from a user-provided idea string. The plan should include shooting schedule outline, estimated crew requirements, location suggestions, and budget tier recommendation.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Ensure the backend Motoko actor exposes all three AI generation endpoints (generateScreenplay, generateCharacterProfiles, generateProductionPlan) that call the OpenAI Chat Completions API via HTTP outcalls, using structured prompts for properly formatted screenplay output, character profiles (name, role, personality, backstory, motivations), and production plan (shooting schedule, crew requirements, location suggestions, budget tier). All three functions must be stable and return results as text.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Scriptoria",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

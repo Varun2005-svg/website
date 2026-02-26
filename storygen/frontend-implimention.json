@@ -1,0 +1,153 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Scriptoria – Full AI Film Pre-Production Platform Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "summary": "Verify and polish the frontend dashboard so the hero section, idea input area, generate button, loading skeleton placeholders, and all three content panels render correctly end-to-end with parallel AI generation and animated skeleton placeholders",
+      "acceptanceCriteria": [
+        "Typing an idea and clicking Generate triggers all three backend calls in parallel.",
+        "Animated skeleton placeholders are visible in all three panels during loading.",
+        "Results populate each respective panel upon completion.",
+        "The Generate button is disabled while generation is in progress."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Verify the root application component correctly manages idea input state, triggers the parallel AI generation mutation using useGenerateAll, passes loading state to content panels for skeleton display, and handles success/error toasts. Ensure the generate button is disabled during mutation execution and all three results are passed to their respective panels."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Verify the useGenerateAll mutation hook correctly calls all three backend actor methods (generateScreenplay, generateCharacterProfiles, generateProductionPlan) in parallel using Promise.all and returns structured results. Ensure proper error handling and that the mutation state reflects loading status accurately."
+        },
+        {
+          "path": "frontend/src/components/IdeaInput.tsx",
+          "operation": "modify",
+          "description": "Verify the idea input component correctly provides a textarea with example idea chips, triggers the generate callback on button click, supports Ctrl+Enter keyboard shortcut, and disables the generate button when isGenerating is true. Ensure proper UI feedback during generation."
+        },
+        {
+          "path": "frontend/src/components/ContentPanels.tsx",
+          "operation": "modify",
+          "description": "Verify the container component correctly renders all three panels (screenplay, character profiles, production plan) with entrance animations, passes loading state to trigger skeleton placeholders, and implements responsive layout (tabbed on mobile, three-column grid on desktop). Ensure smooth CSS transitions on panel appearance."
+        },
+        {
+          "path": "frontend/src/components/LoadingSkeleton.tsx",
+          "operation": "modify",
+          "description": "Verify the skeleton component renders type-specific shimmer placeholders for screenplay, characters, and production plan panels. Ensure animations are smooth and placeholders accurately represent the final content structure."
+        },
+        {
+          "path": "frontend/src/components/ScreenplayPanel.tsx",
+          "operation": "modify",
+          "description": "Verify the screenplay panel correctly displays formatted screenplay content with scene headings, character names, and dialogue. Ensure the panel shows loading skeleton when content is not yet available."
+        },
+        {
+          "path": "frontend/src/components/CharacterProfilesPanel.tsx",
+          "operation": "modify",
+          "description": "Verify the character profiles panel correctly parses AI-generated text into structured character cards with avatars, role-colored badges, and sectioned profile data. Ensure the panel shows loading skeleton when content is not yet available."
+        },
+        {
+          "path": "frontend/src/components/ProductionPlanPanel.tsx",
+          "operation": "modify",
+          "description": "Verify the production plan panel correctly displays formatted sections and bullet points. Ensure the panel shows loading skeleton when content is not yet available."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Ensure the 'Save as PDF' button in the Screenplay panel correctly exports the full screenplay content as a formatted, downloadable A4 PDF file with title, divider, metadata, and monospaced screenplay content using jsPDF",
+      "acceptanceCriteria": [
+        "Clicking 'Save as PDF' downloads a .pdf file to the user's device.",
+        "The PDF includes the screenplay title, a divider, metadata, and the full screenplay body in a readable monospaced font.",
+        "The PDF is A4 size and properly paginated."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ScreenplayPanel.tsx",
+          "operation": "modify",
+          "description": "Verify the 'Save as PDF' button correctly triggers the PDF export function from utils/pdfExport.ts, passing the screenplay content and project idea. Ensure the button is only enabled when screenplay content is available and provides appropriate loading feedback during PDF generation."
+        },
+        {
+          "path": "frontend/src/utils/pdfExport.ts",
+          "operation": "modify",
+          "description": "Verify the pdfExport utility dynamically loads jsPDF from CDN, creates an A4-sized PDF document with the screenplay title, divider, metadata (generation date, project idea), and full screenplay body in a monospaced font (Courier). Ensure proper pagination, line wrapping, and that the PDF downloads with a descriptive filename."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Ensure the 'Download Production Plan' button in the Production Plan panel correctly exports the production plan content as a downloadable .txt file with a formatted header including the project idea and generation date",
+      "acceptanceCriteria": [
+        "Clicking the download button saves a .txt file to the user's device.",
+        "The file includes a header with the project idea and generation date.",
+        "The full production plan content is included in the file."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProductionPlanPanel.tsx",
+          "operation": "modify",
+          "description": "Verify the 'Download Production Plan' button correctly triggers the text export function from utils/textExport.ts, passing the production plan content and project idea. Ensure the button is only enabled when production plan content is available."
+        },
+        {
+          "path": "frontend/src/utils/textExport.ts",
+          "operation": "modify",
+          "description": "Verify the textExport utility creates a plain-text file with a formatted header including the project title, generation date, and a divider, followed by the full production plan content. Ensure the file downloads with a descriptive .txt filename."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Polish the cinematic dark theme dashboard UI to ensure consistent application of the amber/gold and deep charcoal color palette, film-inspired typography, smooth CSS entrance animations on all panels, and a fully responsive layout that collapses gracefully on mobile screens",
+      "acceptanceCriteria": [
+        "The dark cinematic theme with amber/gold accents is applied consistently across all components.",
+        "Panels animate in smoothly on load and after content generation.",
+        "The layout is fully usable on mobile screens (320px+) with no horizontal overflow.",
+        "Film-inspired typography is applied to headings and labels throughout the app."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Verify the global stylesheet imports film-inspired Google Fonts (Cinzel, Playfair Display, Courier Prime), configures Tailwind with cinematic dark theme using OKLCH color tokens (gold/amber accents on deep charcoal backgrounds), and defines custom utility classes for typography, gradients, and film-grain effects. Ensure all color variables are consistently applied across light and dark modes."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Verify the Tailwind configuration extends the theme with cinematic gold/charcoal color palettes using OKLCH, film-inspired font families (Cinzel for headings, Playfair Display for body, Courier Prime for code), custom shadows, border radii, and animation keyframes. Ensure responsive breakpoints are properly configured for mobile-first design."
+        },
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Verify the hero section renders the cinematic banner with the generated hero background image (frontend/public/assets/generated/hero-bg.dim_1920x800.png), gradient overlay, film strip decorations, logo (frontend/public/assets/generated/scriptoria-logo.dim_256x256.png), tagline with film-inspired typography, and decorative gold divider. Ensure responsive scaling on mobile and proper image loading."
+        },
+        {
+          "path": "frontend/src/components/ContentPanels.tsx",
+          "operation": "modify",
+          "description": "Verify smooth CSS entrance animations on all panels using fade-in and slide-up transitions. Ensure animations trigger on initial load and after content generation completes. Verify responsive layout switches from three-column grid on desktop to tabbed interface on mobile with no horizontal overflow."
+        },
+        {
+          "path": "frontend/src/components/ScreenplayPanel.tsx",
+          "operation": "modify",
+          "description": "Verify consistent application of cinematic dark theme colors, film-inspired typography for headings, proper use of monospaced font for screenplay content, and gold accents on interactive elements (buttons, borders). Ensure responsive padding and layout on mobile screens."
+        },
+        {
+          "path": "frontend/src/components/CharacterProfilesPanel.tsx",
+          "operation": "modify",
+          "description": "Verify consistent application of cinematic dark theme colors, role-colored badges using the amber/gold palette, film-inspired typography for character names and section headings, and responsive card layout that stacks properly on mobile screens."
+        },
+        {
+          "path": "frontend/src/components/ProductionPlanPanel.tsx",
+          "operation": "modify",
+          "description": "Verify consistent application of cinematic dark theme colors, film-inspired typography for section headings, proper formatting of bullet points with gold accents, and responsive layout on mobile screens."
+        },
+        {
+          "path": "frontend/src/components/IdeaInput.tsx",
+          "operation": "modify",
+          "description": "Verify consistent application of cinematic dark theme colors to the textarea, example idea chips, and generate button. Ensure film-inspired typography for labels and placeholders, gold hover effects on interactive elements, and responsive layout on mobile screens."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-verify-and-polish-the-frontend-dashboard-so-the-hero-section-idea-input-area-generate-button-loading-skeleton-placeholders-and-all-three-content-panels-screenplay-character-profiles-production-plan-render-correctly-end-to-end-the-generate-button-must-trigger-all-three-ai-generation-calls-in-parallel-and-display-animated-skeleton-placeholders-while-awaiting-results",
+      "featureTitle": "Verify and polish the frontend dashboard so the hero section, idea input area, generate button, loading skeleton placeholders, and all three content panels (Screenplay, Character Profiles, Production Plan) render correctly end-to-end. The generate button must trigger all three AI generation calls in parallel and display animated skeleton placeholders while awaiting results.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CharacterProfilesPanel.tsx",
+        "frontend/src/components/ContentPanels.tsx",
+        "frontend/src/components/IdeaInput.tsx",
+        "frontend/src/components/LoadingSkeleton.tsx",
+        "frontend/src/components/ProductionPlanPanel.tsx",
+        "frontend/src/components/ScreenplayPanel.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-save-as-pdf-button-in-the-screenplay-panel-correctly-exports-the-full-screenplay-content-as-a-formatted-downloadable-a4-pdf-file-with-title-divider-metadata-and-monospaced-screenplay-content-using-jspdf",
+      "featureTitle": "Ensure the 'Save as PDF' button in the Screenplay panel correctly exports the full screenplay content as a formatted, downloadable A4 PDF file with title, divider, metadata, and monospaced screenplay content using jsPDF.",
+      "files": [
+        "frontend/src/components/ScreenplayPanel.tsx",
+        "frontend/src/utils/pdfExport.ts"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-download-production-plan-button-in-the-production-plan-panel-correctly-exports-the-production-plan-content-as-a-downloadable-txt-file-with-a-formatted-header-including-the-project-idea-and-generation-date",
+      "featureTitle": "Ensure the 'Download Production Plan' button in the Production Plan panel correctly exports the production plan content as a downloadable .txt file with a formatted header including the project idea and generation date.",
+      "files": [
+        "frontend/src/components/ProductionPlanPanel.tsx",
+        "frontend/src/utils/textExport.ts"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-polish-the-cinematic-dark-theme-dashboard-ui-to-ensure-consistent-application-of-the-amber-gold-and-deep-charcoal-color-palette-film-inspired-typography-smooth-css-entrance-animations-on-all-panels-and-a-fully-responsive-layout-that-collapses-gracefully-on-mobile-screens-add-any-missing-visual-refinements-to-the-hero-section-navigation-and-content-panels",
+      "featureTitle": "Polish the cinematic dark theme dashboard UI to ensure consistent application of the amber/gold and deep charcoal color palette, film-inspired typography, smooth CSS entrance animations on all panels, and a fully responsive layout that collapses gracefully on mobile screens. Add any missing visual refinements to the hero section, navigation, and content panels.",
+      "files": [
+        "frontend/src/components/CharacterProfilesPanel.tsx",
+        "frontend/src/components/ContentPanels.tsx",
+        "frontend/src/components/HeroSection.tsx",
+        "frontend/src/components/IdeaInput.tsx",
+        "frontend/src/components/ProductionPlanPanel.tsx",
+        "frontend/src/components/ScreenplayPanel.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
