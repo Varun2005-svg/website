@@ -1,0 +1,109 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-frontend-dashboard-with-a-text-input-for-the-user-s-film-idea-and-a-single-generate-button-that-triggers-all-three-ai-generation-functions-screenplay-character-profiles-production-plan-in-parallel-display-a-loading-state-with-animated-skeleton-placeholders-during-generation",
+      "featureTitle": "Build a frontend dashboard with a text input for the user's film idea and a single 'Generate' button that triggers all three AI generation functions (screenplay, character profiles, production plan) in parallel. Display a loading state with animated skeleton placeholders during generation.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/IdeaInput.tsx",
+        "frontend/src/components/LoadingSkeleton.tsx"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-save-as-pdf-feature-for-the-generated-screenplay-in-the-frontend-when-the-user-clicks-save-as-pdf-the-screenplay-content-should-be-formatted-and-exported-as-a-downloadable-pdf-file-using-a-client-side-library-e-g-jspdf",
+      "featureTitle": "Implement a 'Save as PDF' feature for the generated screenplay in the frontend. When the user clicks 'Save as PDF', the screenplay content should be formatted and exported as a downloadable PDF file using a client-side library (e.g., jsPDF).",
+      "files": [
+        "frontend/src/components/ScreenplayPanel.tsx",
+        "frontend/src/utils/pdfExport.ts"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-download-production-plan-feature-in-the-frontend-when-the-user-clicks-the-download-button-the-production-plan-content-is-exported-as-a-downloadable-plain-text-or-markdown-txt-md-file",
+      "featureTitle": "Implement a 'Download Production Plan' feature in the frontend. When the user clicks the download button, the production plan content is exported as a downloadable plain-text or markdown (.txt/.md) file.",
+      "files": [
+        "frontend/src/components/ProductionPlanPanel.tsx",
+        "frontend/src/utils/textExport.ts"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-and-implement-a-modern-animated-mobile-responsive-dashboard-ui-the-layout-should-use-a-cinematic-dark-theme-with-rich-amber-gold-and-deep-charcoal-tones-film-inspired-typography-smooth-css-entrance-animations-for-panels-and-a-fully-responsive-grid-that-collapses-gracefully-on-mobile-screens",
+      "featureTitle": "Design and implement a modern, animated, mobile-responsive dashboard UI. The layout should use a cinematic dark theme with rich amber/gold and deep charcoal tones, film-inspired typography, smooth CSS entrance animations for panels, and a fully responsive grid that collapses gracefully on mobile screens.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/HeroSection.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-organize-the-generated-content-into-three-clearly-labeled-tabbed-or-sectioned-panels-screenplay-character-profiles-and-production-plan-each-panel-should-render-its-content-in-a-readable-well-structured-format",
+      "featureTitle": "Organize the generated content into three clearly labeled tabbed or sectioned panels: 'Screenplay', 'Character Profiles', and 'Production Plan'. Each panel should render its content in a readable, well-structured format.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CharacterProfilesPanel.tsx",
+        "frontend/src/components/ContentPanels.tsx"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
